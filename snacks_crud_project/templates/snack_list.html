@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+
+{% block title %}Snack list{% endblock %}
+
+{% block content %}
+    <h1>Snack List</h1>
+    <br><br>
+    <h2>Discover the Snack list.</h2>
+    <br><br>
+    <ul>
+        {% for snack in object_list %}
+        <li><a href="{{snack.get_absolute_url}}">{{snack.title}}: {{snack.description}}, purchased by {{snack.purchaser}} </a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
